@@ -19,3 +19,15 @@ docker ps -a
 ```
 docker rm 847dc6ee89a0
 ```
+
+## Delete docker images
+```
+docker rmi -f example:latest 
+or
+docker rmi -f cf9a818b9488 
+```
+
+## To remove the container
+```
+docker rm image_name
+```
