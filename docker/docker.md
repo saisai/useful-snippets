@@ -31,3 +31,15 @@ docker rmi -f cf9a818b9488
 ```
 docker rm image_name
 ```
+
+
+# To remove image
+```
+docker rmi scrapy-scrapy
+```
+
+
+# To list image
+```
+docker images
+```

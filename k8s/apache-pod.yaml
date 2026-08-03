@@ -1,0 +1,47 @@
+# Creating Pods
+
+Define a Pod: This is done using YAML or JSON in a pod manifest file. The manifest describes the pod’s contents, such as the container image, ports, and volume mounts. 
+
+Here is a sample Pod-Config that runs the Apache webserver: 
+
+```
+apiVersion: v1 
+
+kind: Pod 
+
+metadata: 
+
+  name: apache-pod 
+
+  labels: 
+
+    purpose: serve-web 
+
+spec: 
+
+  containers: 
+
+  - name: apache-container 
+
+    image: httpd 
+
+    ports: 
+
+    - containerPort: 80
+```
+
+
+# Deploy the Pod: Use the “kubectl apply” command with the pod manifest file to create the pod in your cluster. 
+
+```
+kubectl apply -f apache-pod.yaml
+```
+
+# Managing Pods:
+
+
+```
+Monitoring: Check the status of pods using “kubectl get pods”. This command provides information about the state of each pod in the cluster. 
+Debugging and Logs: Use “kubectl logs [POD_NAME]” to view the logs of a pod, which is crucial for diagnosing problems. 
+Deleting Pods: Pods can be removed with “kubectl delete pod [POD_NAME]”. Kubernetes will attempt to shut down and remove the pod cleanly from the cluster. 
+```

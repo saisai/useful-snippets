@@ -1,0 +1,5 @@
+
+
+```
+dnslookup google.com
+```

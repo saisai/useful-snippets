@@ -1,0 +1,40 @@
+# Git version control
+.git
+.gitignore
+
+# Package dependencies (install these inside the container instead)
+node_modules/
+jspm_packages/
+.pnpm-store/
+venv/
+.venv/
+env/
+
+# Build outputs and IDE configurations
+dist/
+build/
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+
+# Logs and runtime files
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.eslintcache
+
+# Sensitive secrets and environment files
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+
+# Docker specific files
+Dockerfile
+docker-compose.yml
+.dockerignore
+
