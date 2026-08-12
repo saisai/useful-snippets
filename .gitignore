@@ -231,6 +231,9 @@ next-env.d.ts
 # Local environment files (see .env.example)
 .env*.local
 
+# Production Hub env (keep production/.env_hub.example)
+production/.env_hub
+
 # TLS private keys and certificates (keep nginx/certs/.gitkeep)
 nginx/certs/*.crt
 nginx/certs/*.key
