@@ -1,0 +1,8 @@
+node_modules
+.next
+out
+package-lock.json
+next-env.d.ts
+
+# Markdown notes are authored by hand and intentionally left untouched.
+**/*.md

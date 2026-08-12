@@ -1,0 +1,619 @@
+@import 'tailwindcss';
+
+/* next-themes toggles a class on <html>, so the dark variant follows that class. */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme inline {
+  --font-sans: var(--kb-font-sans);
+  --font-mono: var(--kb-font-mono);
+
+  --color-canvas: var(--kb-canvas);
+  --color-surface: var(--kb-surface);
+  --color-surface-strong: var(--kb-surface-strong);
+  --color-line: var(--kb-line);
+  --color-line-strong: var(--kb-line-strong);
+  --color-ink: var(--kb-ink);
+  --color-ink-muted: var(--kb-ink-muted);
+  --color-ink-subtle: var(--kb-ink-subtle);
+  --color-accent: var(--kb-accent);
+  --color-accent-hover: var(--kb-accent-hover);
+  --color-accent-soft: var(--kb-accent-soft);
+
+  --spacing-header: 3.5rem;
+  --container-content: 46rem;
+}
+
+:root {
+  --kb-font-sans:
+    ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
+    'Noto Sans', sans-serif;
+  --kb-font-mono:
+    'JetBrains Mono', ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono',
+    monospace;
+
+  --kb-canvas: #ffffff;
+  --kb-surface: #fafafa;
+  --kb-surface-strong: #f4f4f5;
+  --kb-line: #e5e5e7;
+  --kb-line-strong: #d4d4d8;
+  --kb-ink: #18181b;
+  --kb-ink-muted: #52525b;
+  --kb-ink-subtle: #7b7b85;
+  --kb-accent: #2563eb;
+  --kb-accent-hover: #1d4ed8;
+  --kb-accent-soft: #eff4ff;
+
+  --kb-callout-note: #2563eb;
+  --kb-callout-tip: #059669;
+  --kb-callout-important: #7c3aed;
+  --kb-callout-warning: #b45309;
+  --kb-callout-caution: #dc2626;
+
+  color-scheme: light;
+}
+
+.dark {
+  --kb-canvas: #09090b;
+  --kb-surface: #101013;
+  --kb-surface-strong: #17171b;
+  --kb-line: #26262b;
+  --kb-line-strong: #34343b;
+  --kb-ink: #f4f4f5;
+  --kb-ink-muted: #a1a1aa;
+  --kb-ink-subtle: #85858f;
+  --kb-accent: #60a5fa;
+  --kb-accent-hover: #93c5fd;
+  --kb-accent-soft: #14203a;
+
+  --kb-callout-note: #60a5fa;
+  --kb-callout-tip: #34d399;
+  --kb-callout-important: #a78bfa;
+  --kb-callout-warning: #fbbf24;
+  --kb-callout-caution: #f87171;
+
+  color-scheme: dark;
+}
+
+@layer base {
+  * {
+    border-color: var(--kb-line);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    /* Keeps anchored headings clear of the sticky header. */
+    scroll-padding-top: 5.5rem;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+  body {
+    background-color: var(--kb-canvas);
+    color: var(--kb-ink);
+    font-family: var(--kb-font-sans);
+    font-size: 0.9375rem;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background-color: var(--kb-accent-soft);
+    color: var(--kb-ink);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--kb-accent);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    text-wrap: balance;
+  }
+}
+
+@utility scrollbar-slim {
+  scrollbar-width: thin;
+  scrollbar-color: var(--kb-line-strong) transparent;
+
+  &::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--kb-line-strong);
+    border-radius: 9999px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+}
+
+/* ------------------------------------------------------------------ *
+ * Markdown article
+ * ------------------------------------------------------------------ */
+
+.markdown {
+  color: var(--kb-ink);
+  font-size: 0.9375rem;
+  line-height: 1.75;
+}
+
+.markdown > *:first-child {
+  margin-top: 0;
+}
+
+.markdown h1,
+.markdown h2,
+.markdown h3,
+.markdown h4,
+.markdown h5,
+.markdown h6 {
+  color: var(--kb-ink);
+  font-weight: 600;
+  letter-spacing: -0.011em;
+  scroll-margin-top: 5.5rem;
+}
+
+.markdown h1 {
+  font-size: 1.75rem;
+  line-height: 1.25;
+  margin: 2rem 0 1rem;
+}
+
+.markdown h2 {
+  font-size: 1.3125rem;
+  line-height: 1.35;
+  margin: 2.75rem 0 1rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--kb-line);
+}
+
+.markdown h2:first-child {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: 0;
+}
+
+.markdown h3 {
+  font-size: 1.0625rem;
+  margin: 2rem 0 0.75rem;
+}
+
+.markdown h4 {
+  font-size: 0.9375rem;
+  margin: 1.5rem 0 0.5rem;
+}
+
+.markdown p {
+  margin: 1rem 0;
+}
+
+.markdown strong {
+  font-weight: 600;
+  color: var(--kb-ink);
+}
+
+.markdown em {
+  font-style: italic;
+}
+
+.markdown del {
+  color: var(--kb-ink-subtle);
+}
+
+.markdown ul,
+.markdown ol {
+  margin: 1rem 0;
+  padding-left: 1.375rem;
+}
+
+.markdown ul {
+  list-style: disc;
+}
+
+.markdown ul ul {
+  list-style: circle;
+}
+
+.markdown ol {
+  list-style: decimal;
+}
+
+.markdown li {
+  margin: 0.375rem 0;
+}
+
+.markdown li::marker {
+  color: var(--kb-ink-subtle);
+}
+
+.markdown li > ul,
+.markdown li > ol {
+  margin: 0.375rem 0;
+}
+
+/* GFM task lists */
+.markdown li:has(> input[type='checkbox']) {
+  list-style: none;
+  margin-left: -1.375rem;
+  padding-left: 1.375rem;
+}
+
+.markdown input[type='checkbox'] {
+  margin-right: 0.5rem;
+  accent-color: var(--kb-accent);
+  vertical-align: middle;
+}
+
+.markdown blockquote {
+  margin: 1.25rem 0;
+  padding: 0.25rem 0 0.25rem 1rem;
+  border-left: 2px solid var(--kb-line-strong);
+  color: var(--kb-ink-muted);
+}
+
+.markdown blockquote p {
+  margin: 0.5rem 0;
+}
+
+.markdown hr {
+  margin: 2.5rem 0;
+  border: 0;
+  border-top: 1px solid var(--kb-line);
+}
+
+.markdown a,
+.markdown .markdown-link {
+  color: var(--kb-accent);
+  text-decoration: underline;
+  text-decoration-color: color-mix(in oklab, var(--kb-accent) 35%, transparent);
+  text-underline-offset: 3px;
+  transition: color 120ms ease;
+}
+
+.markdown a:hover {
+  color: var(--kb-accent-hover);
+  text-decoration-color: currentColor;
+}
+
+.markdown-link--external {
+  white-space: nowrap;
+}
+
+.markdown-link__icon {
+  display: inline-block;
+  width: 0.75em;
+  height: 0.75em;
+  margin-left: 0.1em;
+  vertical-align: baseline;
+  opacity: 0.6;
+}
+
+.markdown-image {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 1.5rem 0;
+  border: 1px solid var(--kb-line);
+  border-radius: 0.5rem;
+}
+
+.markdown :not(pre) > code {
+  font-family: var(--kb-font-mono);
+  font-size: 0.8125em;
+  padding: 0.15em 0.375em;
+  border-radius: 0.3rem;
+  background-color: var(--kb-surface-strong);
+  border: 1px solid var(--kb-line);
+  word-break: break-word;
+}
+
+.markdown a code {
+  color: inherit;
+}
+
+.markdown kbd {
+  display: inline-block;
+  min-width: 1.5rem;
+  padding: 0.05rem 0.35rem;
+  border: 1px solid var(--kb-line-strong);
+  border-bottom-width: 2px;
+  border-radius: 0.3rem;
+  background-color: var(--kb-surface);
+  font-family: var(--kb-font-mono);
+  font-size: 0.75em;
+  line-height: 1.5;
+  text-align: center;
+  color: var(--kb-ink-muted);
+}
+
+.markdown details {
+  margin: 1.25rem 0;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--kb-line);
+  border-radius: 0.5rem;
+  background-color: var(--kb-surface);
+}
+
+.markdown summary {
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.markdown details > *:last-child {
+  margin-bottom: 0;
+}
+
+/* GFM footnotes */
+.markdown .footnotes {
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--kb-line);
+  font-size: 0.875rem;
+  color: var(--kb-ink-muted);
+}
+
+.markdown .sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.markdown sup a {
+  text-decoration: none;
+}
+
+/* Heading anchors */
+.heading-anchor {
+  margin-left: 0.5rem;
+  color: var(--kb-ink-subtle);
+  text-decoration: none;
+  opacity: 0;
+  transition: opacity 120ms ease;
+}
+
+.markdown h2:hover .heading-anchor,
+.markdown h3:hover .heading-anchor,
+.markdown h4:hover .heading-anchor,
+.heading-anchor:focus-visible {
+  opacity: 1;
+}
+
+.heading-anchor__icon {
+  font-weight: 400;
+}
+
+/* ------------------------------------------------------------------ *
+ * Tables
+ * ------------------------------------------------------------------ */
+
+.table-wrapper {
+  margin: 1.5rem 0;
+  overflow-x: auto;
+  border: 1px solid var(--kb-line);
+  border-radius: 0.5rem;
+  scrollbar-width: thin;
+}
+
+.table-wrapper table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+
+.table-wrapper th,
+.table-wrapper td {
+  padding: 0.625rem 0.875rem;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--kb-line);
+}
+
+.table-wrapper thead th {
+  background-color: var(--kb-surface);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.table-wrapper tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.table-wrapper code {
+  white-space: nowrap;
+}
+
+/* ------------------------------------------------------------------ *
+ * Code blocks
+ * ------------------------------------------------------------------ */
+
+.code-block {
+  margin: 1.25rem 0;
+  border: 1px solid var(--kb-line);
+  border-radius: 0.5rem;
+  background-color: var(--kb-surface);
+  overflow: hidden;
+}
+
+.code-block__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.375rem 0.375rem 0.375rem 0.875rem;
+  border-bottom: 1px solid var(--kb-line);
+  background-color: var(--kb-surface-strong);
+}
+
+.code-block__language {
+  font-family: var(--kb-font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--kb-ink-subtle);
+}
+
+.code-block__copy {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.375rem;
+  font-size: 0.75rem;
+  color: var(--kb-ink-muted);
+  background-color: transparent;
+  cursor: pointer;
+  transition:
+    color 120ms ease,
+    background-color 120ms ease;
+}
+
+.code-block__copy:hover {
+  color: var(--kb-ink);
+  background-color: var(--kb-canvas);
+}
+
+.code-block pre {
+  margin: 0;
+  padding: 0.875rem 1rem;
+  overflow-x: auto;
+  font-family: var(--kb-font-mono);
+  font-size: 0.8125rem;
+  line-height: 1.7;
+  tab-size: 2;
+  scrollbar-width: thin;
+}
+
+.code-block pre code {
+  display: block;
+  min-width: fit-content;
+  font-family: inherit;
+  background: none;
+  border: 0;
+  padding: 0;
+}
+
+/* Shiki emits both themes as CSS variables, so switching is instant. */
+.shiki,
+.shiki span {
+  color: var(--shiki-light);
+  background-color: transparent !important;
+}
+
+.dark .shiki,
+.dark .shiki span {
+  color: var(--shiki-dark);
+}
+
+/* ------------------------------------------------------------------ *
+ * Callouts (GitHub style alerts)
+ * ------------------------------------------------------------------ */
+
+.callout {
+  --callout-color: var(--kb-callout-note);
+  margin: 1.5rem 0;
+  padding: 0.875rem 1rem;
+  border: 1px solid var(--kb-line);
+  border-left: 3px solid var(--callout-color);
+  border-radius: 0.5rem;
+  background-color: var(--kb-surface);
+}
+
+.callout--tip {
+  --callout-color: var(--kb-callout-tip);
+}
+
+.callout--important {
+  --callout-color: var(--kb-callout-important);
+}
+
+.callout--warning {
+  --callout-color: var(--kb-callout-warning);
+}
+
+.callout--caution {
+  --callout-color: var(--kb-callout-caution);
+}
+
+.callout__header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0 0 0.375rem;
+  color: var(--callout-color);
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+.callout__icon {
+  width: 1rem;
+  height: 1rem;
+  flex: none;
+}
+
+.callout__body > *:first-child {
+  margin-top: 0;
+}
+
+.callout__body > *:last-child {
+  margin-bottom: 0;
+}
+
+.callout__body {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  color: var(--kb-ink-muted);
+}
+
+/* ------------------------------------------------------------------ *
+ * Mermaid
+ * ------------------------------------------------------------------ */
+
+.mermaid {
+  display: flex;
+  justify-content: center;
+  margin: 1.5rem 0;
+  padding: 1rem;
+  border: 1px solid var(--kb-line);
+  border-radius: 0.5rem;
+  background-color: var(--kb-surface);
+  overflow-x: auto;
+}
+
+.mermaid svg {
+  max-width: 100%;
+  height: auto;
+}
+
+.mermaid--loading,
+.mermaid__notice {
+  color: var(--kb-ink-subtle);
+  font-size: 0.8125rem;
+}
+
+.mermaid--failed {
+  display: block;
+}
+
+.mermaid--failed pre {
+  margin: 0.5rem 0 0;
+  overflow-x: auto;
+  font-family: var(--kb-font-mono);
+  font-size: 0.8125rem;
+}

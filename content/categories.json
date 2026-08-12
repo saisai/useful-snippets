@@ -1,0 +1,92 @@
+{
+  "general": {
+    "label": "Getting Started",
+    "description": "How this knowledge base is organised and how to add to it.",
+    "icon": "notes",
+    "order": 1
+  },
+  "git": {
+    "label": "Git",
+    "description": "Everyday Git commands, branch workflows, history rewriting and recovery.",
+    "icon": "git",
+    "order": 10
+  },
+  "docker": {
+    "label": "Docker",
+    "description": "Images, containers, Compose files and the errors that come with them.",
+    "icon": "docker",
+    "order": 20
+  },
+  "linux": {
+    "label": "Linux",
+    "description": "Distribution specific notes for Arch, Ubuntu and Proxmox hosts.",
+    "icon": "linux",
+    "order": 30
+  },
+  "linux-command": {
+    "label": "Linux Commands",
+    "description": "Single command references: networking, permissions, disks and services.",
+    "icon": "shell",
+    "order": 35
+  },
+  "bash": {
+    "label": "Bash",
+    "description": "Shell snippets, disk utilities and key generation.",
+    "icon": "shell",
+    "order": 40
+  },
+  "ssh": {
+    "label": "SSH",
+    "description": "Keys, agents and remote access configuration.",
+    "icon": "ssh",
+    "order": 50
+  },
+  "python": {
+    "label": "Python",
+    "description": "Environments, packaging and language notes.",
+    "icon": "code",
+    "order": 60
+  },
+  "go": {
+    "label": "Go",
+    "description": "Toolchain and language notes.",
+    "icon": "code",
+    "order": 70
+  },
+  "k8s": {
+    "label": "Kubernetes",
+    "description": "Manifests, pods and cluster operations.",
+    "icon": "kubernetes",
+    "order": 80
+  },
+  "hosting": {
+    "label": "Hosting",
+    "description": "Provider specific setup notes for servers, DNS and deployments.",
+    "icon": "cloud",
+    "order": 90
+  },
+  "ai": {
+    "label": "AI",
+    "description": "Models, tools and references worth keeping.",
+    "icon": "ai",
+    "order": 100
+  },
+  "android": {
+    "label": "Android",
+    "description": "Device and tooling notes.",
+    "icon": "tools",
+    "order": 110
+  },
+  "windows": {
+    "label": "Windows",
+    "description": "Windows specific fixes and configuration.",
+    "icon": "windows",
+    "order": 120
+  },
+  "powershell": {
+    "label": "PowerShell",
+    "description": "PowerShell commands and environment setup.",
+    "icon": "shell",
+    "order": 130
+  }
+}
