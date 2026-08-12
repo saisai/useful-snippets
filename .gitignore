@@ -230,3 +230,8 @@ next-env.d.ts
 
 # Local environment files (see .env.example)
 .env*.local
+
+# TLS private keys and certificates (keep nginx/certs/.gitkeep)
+nginx/certs/*.crt
+nginx/certs/*.key
+nginx/certs/*.pem
