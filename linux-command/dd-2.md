@@ -14,12 +14,12 @@ Everything ran completely normally here. What you are seeing is the expected tex
 Here is a breakdown of what those lines mean and why that error is actually a sign of success:
 ```
 
-# The "Error": No space left on device
-While it says "error", this is actually exactly what you want to see when zeroing out a drive.
+The "Error": No space left on device
+While it says "error", this is actually exactly what you usernamet to see when zeroing out a drive.
 
 Because you didn't specify a count= argument (which tells dd exactly when to stop), dd kept writing blocks of zeros (if=/dev/zero) to the drive (of=/dev/sda) until it hit the physical boundary of the disk. When it ran out of sectors to write to, the Linux kernel threw the No space left on device error, causing dd to stop. Your entire drive is now completely zeroed out.
 
-# The Resource Usage (Zsh/Bash time stats)
+The Resource Usage (Zsh/Bash time stats)
 
 - user (3.85s): The CPU spent almost no time executing code in user space because dd doesn't do complex processing; it just passes data.
 

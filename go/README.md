@@ -1,4 +1,5 @@
-# How to compile and build go from source 
+
+How to compile and build go from source 
 
 ```
 cd ~/go-src/go

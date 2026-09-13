@@ -1,5 +1,5 @@
-# See the diff introduced by the latest pull
 
+See the diff introduced by the latest pull
 ```
 git diff ORIG_HEAD..HEAD
 ```

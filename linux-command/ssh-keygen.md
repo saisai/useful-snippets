@@ -1,4 +1,5 @@
-# Error
+
+
 ```
  ssh -l root 192.168.2.38
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
@@ -15,5 +16,5 @@ Please contact your system administrator.
 
 # To renew
 ```
-ssh-keygen -R 192.168.1.50
+ssh-keygen -R 192.168.2.36
 ```

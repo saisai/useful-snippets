@@ -1,4 +1,5 @@
-# To list remote branches
+
+To list remote branches
 ```
 git branch -r
 ```

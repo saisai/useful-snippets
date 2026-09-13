@@ -1,4 +1,5 @@
-# To create new branch from committed hash id 
+
+To create new branch from committed hash id 
 ```
 git switch -c feat/helloworld 7a6c47f
 ```

@@ -291,7 +291,7 @@ server:
 	# xdp-interface: eth0
 
 	# The eBPF XDP program to extract the XSKMAP from. Specify your own
-	# program here, if you want to use a custom XDP program.
+	# program here, if you usernamet to use a custom XDP program.
 	# The default program shipped with NSD only redirects UDP
 	# (over Ethernet[+VLAN]+IPv4/6) traffic to port 53. When using your own
 	# XDP program, it needs to define a BPF_MAP_TYPE_XSKMAP named "xsks_map"
@@ -505,9 +505,9 @@ remote-control:
 	# A secondary zone needs allow-notify: and request-xfr: lists.
 	#allow-notify: 2001:db8::0/64 my_tsig_key_name
 	# By default, a secondary will request a zone transfer with IXFR/TCP.
-	# If you want to make use of IXFR/UDP use: UDP addr tsigkey
+	# If you usernamet to make use of IXFR/UDP use: UDP addr tsigkey
 	# for a primary that only speaks AXFR use AXFR addr tsigkey
-	# If you want to require use of XFR-over-TLS use: addr tsigkey tlsauthname
+	# If you usernamet to require use of XFR-over-TLS use: addr tsigkey tlsauthname
 	#request-xfr: 192.0.2.2 the_tsig_key_name
 	#request-xfr: 192.0.2.2 the_tsig_key_name the_tls_auth_name
 	# Attention: You cannot use UDP and AXFR together. AXFR is always over

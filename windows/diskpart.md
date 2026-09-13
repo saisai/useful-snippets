@@ -1,5 +1,5 @@
-# Formatting a USB drive completely wipes all data on it and sets up a fresh file system. In Windows, you can do this quickly using either the graphical interface or the command line
 
+Formatting a USB drive completely wipes all data on it and sets up a fresh file system. In Windows, you can do this quickly using either the graphical interface or the command line
 
 - 1.Right-click the Start menu and select Terminal (Admin) or Command Prompt (Admin).
 

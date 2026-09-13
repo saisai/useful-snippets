@@ -33,7 +33,7 @@ sudo systemctl status docker
 sudo systemctl start docker
 ```
 
-#Optional: Run Docker Without SudoBy default, Docker commands require root level privileges (sudo). If you want to run Docker commands as a non-root user, add your current account to the Docker user group:
+#Optional: Run Docker Without SudoBy default, Docker commands require root level privileges (sudo). If you usernamet to run Docker commands as a non-root user, add your current account to the Docker user group:
 
 ```
 sudo usermod -aG docker ${USER}

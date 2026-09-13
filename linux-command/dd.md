@@ -1,4 +1,4 @@
-# Permanently overwrites the entire /dev/sda disk with zeros
+Permanently overwrites the entire /dev/sda disk with zeros
 ```
 dd if=/dev/zero of=/dev/sda bs=4M status=progress
 923082424320 bytes (923 GB, 860 GiB) copied, 5313 s, 174 MB/s
@@ -65,7 +65,7 @@ sudo dd if=/dev/zero of=/dev/sda bs=4M status=progress
 
 
 # Optional: Check the end of the disk
-If you want to be extra thorough, you can also inspect the last sector to confirm it was overwritten.
+If you usernamet to be extra thorough, you can also inspect the last sector to confirm it was overwritten.
 
 ```
 blockdev --getsz /dev/sda

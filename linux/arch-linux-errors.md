@@ -2,7 +2,7 @@
 ```
 error: openh264: signature from "Daniel Bermond <dbermond@archlinux.org>" is marginal trust
 :: File /var/cache/pacman/pkg/openh264-2.6.0-2-x86_64.pkg.tar.zst is corrupted (invalid or corrupted package (PGP signature)).
-Do you want to delete it? [Y/n] y
+Do you usernamet to delete it? [Y/n] y
 error: failed to commit transaction (invalid or corrupted package)
 Errors occurred, no packages were upgraded.
 

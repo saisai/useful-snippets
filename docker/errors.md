@@ -1,5 +1,5 @@
-# No spacke left to move Docker's data directory:
 
+No spacke left to move Docker's data directory:
 ```
 sudo systemctl stop docker
 sudo mv /var/lib/docker /home/docker

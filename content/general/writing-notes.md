@@ -16,7 +16,7 @@ featured: true
 
 ## File naming
 
-The file path decides the route, so name files the way you want to read them in
+The file path decides the route, so name files the way you usernamet to read them in
 a URL: lowercase, words separated by hyphens.
 
 ```text
